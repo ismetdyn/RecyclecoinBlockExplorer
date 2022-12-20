@@ -1,0 +1,27 @@
+﻿<div class="col-xxl-3 col-md-3">
+    <div class="card info-card reward-card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a class=" title" asp-area="" asp-controller="Accounts" asp-action="Index">Hesaplar</a>
+            </h5>
+
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="text-muted small bi bi-gem"></i>
+                </div>
+                <div class="ps-3">
+                    <div style="width:100px"></div>
+                    @{
+                        var data = ViewBag.HesapSayisi;
+                        double data2 = ViewBag.HesaplardakiToplamPara;
+                    }
+                    <h6>@data.ToString()&nbsp;<span class="textSufix">adet hesap</span></h6>
+                    <span class="infoSmall">
+                        @data2.ToString("C6")&nbsp;<span class="textSufix">RC</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

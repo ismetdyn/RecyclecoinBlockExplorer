@@ -1,0 +1,47 @@
+.dateTx[b-ba8z67lcf7] {
+    font-size: 0.70em;
+    white-space: nowrap;
+}
+
+.tx[b-ba8z67lcf7] {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.amount[b-ba8z67lcf7] {
+    padding: 5px;
+    font-size: 0.7em;
+    min-width: 10%;
+    text-align: end;
+    background-color: #eee;
+    white-space: nowrap;
+}
+
+.viewall[b-ba8z67lcf7] {
+    font-size: 0.9em;
+}
+
+.hashTx[b-ba8z67lcf7] {
+    font-size: 0.85em;
+}
+
+.addrsLabel[b-ba8z67lcf7] {
+    font-size: 0.74em;
+    color: black;
+}
+
+.addrs[b-ba8z67lcf7] {
+    font-size: 0.95em;
+}
+
+.subTitle[b-ba8z67lcf7] {
+    color: #454545;
+}
+
+
+
+.divRow[b-ba8z67lcf7] {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #dddddd;
+}

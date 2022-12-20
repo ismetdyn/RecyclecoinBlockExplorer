@@ -1,0 +1,27 @@
+﻿<div class="col-xxl-3 col-md-3">
+    <div class="card info-card revenue-card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a class="title" asp-area="" asp-controller="Transactions" asp-action="Index">İşlemler</a>
+            </h5>
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="text-muted small bi bi-arrow-down-up"></i>
+                </div>
+                <div class="ps-3">
+                    <div style="width:100px"></div>
+                    @{
+                        var data = (long)ViewBag.IslemSayisi;
+                        double data2 = (long)ViewBag.ToplamIslemTutari;
+                    }
+                    <h6>@data.ToString()&nbsp;<span class="textSufix">Tx</span></h6>
+                    <span class="infoSmall">
+                        @data2.ToString("C6")&nbsp;<span class="textSufix">RC</span>
+                    </span>
+                    </>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

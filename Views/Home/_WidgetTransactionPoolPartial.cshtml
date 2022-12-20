@@ -1,0 +1,68 @@
+﻿@using RecycleCoin.Grpc;
+@using RecycleCoinBlockExplorer.Utility;
+<div class="card">
+    <div class="card-header">
+        <h6 class="subTitle">Havuzdaki İşlemler</h6>
+    </div>
+    <div class="card-body">
+        @{
+            var sunucuDurum = ViewBag.SunucuDurum;
+            var islemler = ViewBag.IslemHavuzu;
+        }
+        @if (true)
+        {
+            if (islemler != null && islemler.Count > 0)
+            {
+                @foreach (Islem islem in islemler)
+                {
+                    <div class="row divRow">
+                        <div class="col-sm-1 align-self-center">
+                            <div class="tx">
+                                <i class="bi bi-arrow-down-up"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-3  d-flex flex-column">
+                            <a href="/transactions/hash=@islem.Karma">
+                                <span class="hashTx">
+                                    @islem.Karma.Substring(0,10) ...
+                                </span>
+                            </a>
+                            <span class="dateTx">@Converter.ToDateTime(@islem.ZamanDamgasi)</span>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="d-flex flex-column">
+                                <span class="addrsLabel">
+                                    Kimden&nbsp;&nbsp;
+                                    <span class="addrs">
+                                        <a href="/accounts/address=@islem.Gonderen">@islem.Gonderen.Substring(0,10) ...</a>
+                                    </span>
+                                </span>
+                                <span class="addrsLabel">
+                                    Kime&nbsp;&nbsp;
+                                    <span class="addrs">
+                                        <a href="/accounts/address=@islem.Alici">@islem.Alici.Substring(0,10) ...</a>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="amount">@islem.Tutar.ToString("C6") <span class="text-muted" style="font-size:0.8em">RC</span> </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="text-center"><p>Hiçbir işlem alınamadı!</p></div>
+            }
+        }
+        else
+        {
+            <div class="text-center"><p>Sunucuyla iletişim kurulamıyor!</p></div>
+        }
+    </div>
+    <div class="text-center">
+        <a asp-area="" asp-controller="PendingTransactions" asp-action="Index"><span class="viewall">Havuzdaki Tüm İşlemler</span></a>
+    </div>
+    <br />
+</div>

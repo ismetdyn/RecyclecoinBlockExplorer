@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+option csharp_namespace = "RecycleCoin.Grpc";
+import "google/protobuf/empty.proto";
+
+service GenelBilgi {
+	rpc AgGenelBilgisiGetir(google.protobuf.Empty) returns (Bilgi);
+}
+
+message Bilgi{
+	bool durum = 1;
+	string mesaj = 2;
+	int64 son_blok_yuksekligi = 3;
+	int64 islem_sayisi = 4;
+	int64 havuzdaki_islem_sayisi = 5;
+	double toplam_islem_tutari = 6;
+	double havuzdaki_toplam_islem_tutari = 7;
+	int64  toplam_hesap_sayisi = 8;
+	double hesaplardaki_toplam_para = 9;
+}

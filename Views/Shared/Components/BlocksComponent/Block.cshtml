@@ -1,0 +1,138 @@
+﻿@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers;
+@using RecycleCoin.Grpc;
+@using RecycleCoinBlockExplorer.Utility;
+@{
+	ViewData["Title"] = "Blok";
+	long sonYukseklik = Model.SonBlokYuksekligi;
+	Blok blok = Model.Blok;
+}
+<div class="pagetitle">
+	
+	@if (blok != null && blok.Yukseklik >= 0)
+	{
+		<h5>
+			Blok Karması: <span class="text-wrap title">@blok.Karma</span>
+		</h5>
+	}
+	<nav>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="/">AnaSayfa</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="/blocks">Bloklar</a>
+			</li>
+		</ol>
+	</nav>
+</div>
+
+<div class="card">
+	<div class="card-title" />
+	<div class="card-body">
+		@if (Program.SunucuDurum())
+		{
+			@if (blok != null)
+			{
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="Blok numarası olarak da bilinen blok yüksekliği, blok zincirinin uzunluğudur.">Block Yüksekliği </div>
+					<div class="col-sm-8 value">
+						@if (blok.Yukseklik > 0)
+						{
+							var oncekiYukseklik = blok.Yukseklik - 1;
+							<a href="/blocks/height=@oncekiYukseklik"><i class="bi bi-chevron-left"></i></a>
+						}
+						&nbsp;&nbsp;<strong>@blok.Yukseklik</strong>&nbsp;&nbsp;
+						@if (blok.Yukseklik != sonYukseklik)
+						{
+							var sonrakiYukseklik = blok.Yukseklik + 1;
+							<a href="/blocks/height=@sonrakiYukseklik"><i class="bi bi-chevron-right"></i></a>
+						}
+
+					</div>
+				</div>
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="Bir bloğun oluşturulduğu tarih ve saat.">
+						Zaman Damgasi
+					</div>
+					<div class="col-sm-8 value"><i class="bi bi-clock"></i> @Converter.ToDateTime(blok.ZamanDamgasi)</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" data-placement="auto" title="Bloktaki işlem adedi.">
+						İşlemler
+					</div>
+					<div class="col-sm-8 value">
+						blokta
+						<a class="valueWithLink" href="/transactions/height=@blok.Yukseklik">@blok.IslemAdedi işlem var</a>
+					</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" data-placement="auto" title="Bu bloktaki tüm işlemlerin toplam tutarı.">
+						Toplam Tutar
+					</div>
+					<div class="col-sm-8 value"><strong>@blok.ToplamTutar.ToString("C6")</strong> RC</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" data-placement="auto" title="Bloğu blockshain'e başarılı bir şekilde dahil eden doğrulayıcı.">
+						Doğrulayıcı
+					</div>
+					<div class="col-sm-8 value">
+						<a class="valueWithLink" href="/accounts/address=@blok.Dogrulayici">@blok.Dogrulayici.Substring(0,10)...</a>
+						&nbsp;&nbsp; @blok.InsaSuresi ms'de.
+					</div>
+				</div>
+
+
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" data-placement="auto" title="Her blok için doğrulayıcı, bloktaki tüm işlemler için ödenen ücretlere ek olarak sınırlı miktarda RC ile ödüllendirilir.">
+						Block Ödülü
+					</div>
+					<div class="col-sm-8 value"><strong> @blok.ToplamOdul.ToString("C6")</strong> RC</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" data-placement="auto" title="Bir bloğun parçası olan tüm işlemlerin karmalarınını karması.">
+						Merkle Kök
+					</div>
+					<div class="col-sm-8 value">@blok.MerkleKoku</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" data-placement="auto" title="Bloğun boyutu(bytes)">
+						Boyut
+					</div>
+					<div class="col-sm-8 value"> @blok.Boyut byte</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" data-placement="auto" title="Bloğun blok header'ının' karması">
+						Karma
+					</div>
+					<div class="col-sm-8 value">@blok.Karma</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" data-placement="auto" title="Blok zincirindeki bir önceki bloğun karması.">
+						Onceki Karma
+					</div>
+					<div class="col-sm-8">
+						<a class="valueWithLink" href="/blocks/hash=@blok.OncekiKarma">@blok.OncekiKarma</a>
+					</div>
+				</div>
+			}
+			else
+			{
+				<div class="text-center"><p>Blok blunamadı ya da daha yaratılmadı! </p></div>
+			}
+		}
+		else
+		{
+			<div class="text-center"><p> Sunucuya erişilemiyor! </p></div>
+		}
+
+
+	</div>
+</div>

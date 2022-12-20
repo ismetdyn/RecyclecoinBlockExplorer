@@ -1,0 +1,36 @@
+﻿syntax = "proto3";
+option csharp_namespace = "RecycleCoin.Grpc";
+import "google/protobuf/empty.proto";
+
+service HesapServis {
+	rpc Ekle(HesapIstek) returns (HesapDurum);
+	rpc Guncelle(HesapIstek) returns (HesapDurum);
+	rpc GenelAnahtarIleGetir(HesapIstek) returns (HesapDurum);
+	rpc AdresIleGetir(HesapIstek) returns (HesapDurum);
+	rpc HepsiniGetir(google.protobuf.Empty) returns (HesapDurum);
+	rpc EnZenginNadetHesapGetir(HesapIstek) returns (HesapDurum);
+}
+
+message HesapIstek{
+	string genel_anahtar = 1;
+	string adres = 2;
+	Hesap hesap = 3;
+	int32 adet = 4;
+}
+
+message HesapDurum {
+	bool durum = 1;
+	string mesaj = 2;
+	Hesap hesap = 3;
+	repeated Hesap hesaplar = 4;
+}
+
+message Hesap{
+	int64 Id = 1;
+	string adres = 2;
+	string genel_anahtar = 3;
+	double bakiye = 4;
+	int64 islem_adedi = 5;
+	int64 yaratildi = 6;
+	int64 guncellendi = 7;
+}

@@ -1,0 +1,63 @@
+﻿@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@using RecycleCoin.Grpc;
+@using RecycleCoinBlockExplorer.Utility;
+@{
+	ViewData["Title"] = "Bloklar";
+	var bloklar = Model.Bloklar;
+}
+<div class="card">
+
+	<div class="card-body">
+		<div class="card-title" />
+		@if (Program.SunucuDurum())
+		{
+			@if (bloklar != null && bloklar.Count > 0)
+			{
+				<div class="row">
+					<div class="col d-flex justify-content-start">
+						<p>Son 25 Blok Gösteriliyor</p>
+					</div>
+					<div class="col d-flex justify-content-end">
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table class="table datatable">
+						<thead>
+							<tr>
+								<th class="tableHeader">Blok</th>
+								<th class="tableHeader">Yaş</th>
+								<th class="tableHeader">Karma</th>
+								<th class="tableHeader">İşlem Adedi</th>
+								<th class="tableHeader">Dogrulayıcı</th>
+								<th class="tableHeader" style="text-align:right">Tutar</th>
+								<th class="tableHeader" style="text-align:right">Ödül</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (Blok blok in bloklar)
+							{
+								<tr>
+									<td><a class="heightBlock" href="/blocks/height=@blok.Yukseklik">@blok.Yukseklik</a></td>
+									<td><span class="dateInTable">@Converter.ToDateTime(@blok.ZamanDamgasi)</span></td>
+									<td><a class="addrsInTable" href="/blocks/hash=@blok.Karma">@blok.Karma.Substring(0, 10)...</a></td>
+									<td class="numTxInTable"><a class="numTnx" href="/transactions/height=@blok.Yukseklik"><span>@blok.IslemAdedi adet</span></a></td>
+									<td><a class="addrsInTable" href="/accounts/address=@blok.Dogrulayici">@blok.Dogrulayici.Substring(0, 20)...</a></td>
+									<td><div class="amountInTable"><b>@blok.ToplamTutar.ToString("C6")</b> RC </div></td>
+									<td><div class="amountInTable"><b>@blok.ToplamOdul.ToString("C6")</b> RC</div></td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			}
+			else
+			{
+				<div class="text-center"><p>Blok bulunamadi </p></div>
+			}
+		}
+		else
+		{
+			<div class="text-center"><p>Sunucuya erişilemiyor! </p></div>
+		}
+	</div>
+</div>

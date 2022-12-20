@@ -1,0 +1,59 @@
+﻿@using RecycleCoin.Grpc;
+@using RecycleCoinBlockExplorer.Utility;
+@model Veri;
+@{
+	ViewData["Title"] = "Hesaplar";
+	var hesaplar = Model.Hesaplar;
+}
+<div class="card">
+
+	<div class="card-body">
+		<div class="card-title" />
+		@if (Program.SunucuDurum())
+		{
+			@if (hesaplar != null && hesaplar.Count > 0)
+			{
+				<div class="row">
+					<div class="col d-flex justify-content-start">
+						<p>En Zengin 25 Hesap Gösteriliyor</p>
+					</div>
+					<div class="col d-flex justify-content-end">
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table class="table datatable">
+						<thead>
+							<tr>
+								<th class="tableHeader">Adres</th>
+								<th class="tableHeader" style="text-align:right">Bakiye</th>
+								<th class="tableHeader" style="text-align:right">İslem Adedi</th>
+								<th class="tableHeader" style="text-align:right">Guncellendi</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (Hesap hesap in hesaplar)
+							{
+								<tr>
+									<td><a class="heightBlock" href="/accounts/address=@hesap.Adres">@hesap.Adres</a></td>
+									<td><div class="amountInTable"><b>@hesap.Bakiye.ToString("C6")</b> RC </div></td>
+									<td><div class="amountInTable"><b>@hesap.IslemAdedi</b></div></td>
+									<td style="text-align:right">
+										<span class="dateInTable">@Converter.ToDateTime(@hesap.Guncellendi)</span>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			}
+			else
+			{
+				<div class="text-center"><p>Hiçbir Hesap Alınamadı! </p></div>
+			}
+		}
+		else
+		{
+			<div class="text-center"><p>Sunucuya erişilemiyor! </p></div>
+		}
+	</div>
+</div>

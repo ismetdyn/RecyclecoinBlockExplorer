@@ -1,0 +1,89 @@
+﻿.validatorLabel {
+    font-size: 0.75em;
+}
+
+.validator {
+    font-size: 0.9em;
+}
+
+.numTnx {
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.numTxInTable {
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+.lblTx {
+    font-size: 0.8em;
+}
+
+
+.dateTx {
+    font-size: 0.7em;
+    white-space: nowrap;
+}
+
+
+.heightBlock {
+    font-size: 0.85em;
+}
+
+.bk {
+    text-align: left;
+    width: 30px;
+    height: 30px;
+}
+
+.amount {
+    padding: 5px;
+    font-size: 0.75em;
+    font-weight: bold;
+    width: 100%;
+    text-align: end;
+    background-color: #eee;
+}
+
+.subTitle {
+    color: #454545;
+}
+
+
+.tableTitle {
+    margin-bottom: 15px;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+.divRow {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.viewall {
+    font-size: 0.8em;
+}
+
+.addrsInTable {
+    font-size: 0.8em;
+}
+
+.amountInTable {
+    padding: 5px;
+    font-size: 0.8em;
+    text-align: end;
+    white-space: nowrap;
+}
+
+.dateInTable {
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.tableHeader {
+    font-size: 0.8em;
+    white-space: nowrap;
+}

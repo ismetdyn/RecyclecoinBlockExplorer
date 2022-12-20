@@ -1,0 +1,70 @@
+﻿@using RecycleCoin.Grpc;
+@using RecycleCoinBlockExplorer.Utility;
+@model Veri;
+@{
+	ViewData["Title"] = "İşlemLer";
+	var islemler = Model.Islemler;
+}
+<div class="card">
+	<div class="card-body">
+		<div class="card-title" />
+		@if (Program.SunucuDurum())
+		{
+			@if (islemler != null && islemler.Count > 0)
+			{
+				<div class="row">
+					<div class="col d-flex justify-content-start">
+						<p>Son 25 İşlem Gösteriliyor</p>
+					</div>
+					<div class="col d-flex justify-content-end">
+					</div>
+				</div>
+
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th class="tableHeader">İşlem Karmasi</th>
+								<th class="tableHeader">Blok</th>
+								<th class="tableHeader">Yaş</th>
+								<th class="tableHeader">Kimden</th>
+								<th class="tableHeader">Kime</th>
+								<th class="tableHeader" style="text-align:right">Tutar</th>
+								<th class="tableHeader" style="text-align:right">Ucret</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var islem in islemler)
+							{
+								<tr class="tx">
+									@if (Model.IsPool)
+									{
+										<td><a class="hashTx" href="/pendingtransactions/hash=@islem.Karma">@islem.Karma.Substring(0, 15)...</a></td>
+									}
+									else
+									{
+										<td><a class="hashTx" href="/transactions/hash=@islem.Karma">@islem.Karma.Substring(0, 15)...</a></td>
+									}
+									<td><a class="heightBlock" href="/blocks/height=@islem.Yukseklik">@islem.Yukseklik</a></td>
+									<td><span class="dateTx">@Converter.ToDateTime(@islem.ZamanDamgasi)</span></td>
+									<td class="addrsInTable"><a href="/accounts/address=@islem.Gonderen">@islem.Gonderen.Substring(0, 20)...</a></td>
+									<td class="addrsInTable"><a href="/accounts/address=@islem.Alici"> @islem.Alici.Substring(0, 20)...</a></td>
+									<td><div class="amountInTable">@islem.Tutar.ToString("C6") RC</div></td>
+									<td><div class="amountInTable">@islem.Ucret.ToString("C6") RC</div></td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			}
+			else
+			{
+				<div class="text-center"><p>Hiçbir İşlem Alınamadı! </p></div>
+			}
+		}
+		else
+		{
+			<div class="text-center"><p>Sunucuya erişilemiyor! </p></div>
+		}
+	</div>
+</div>

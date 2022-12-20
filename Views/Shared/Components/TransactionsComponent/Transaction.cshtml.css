@@ -1,0 +1,22 @@
+﻿.rowDiv {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.title {
+    margin-top: 20px;
+}
+
+.value {
+    font-size: 0.95em;
+}
+
+
+.success {
+    color: green;
+    font-size: 0.95em;
+}
+
+.valueWithLink {
+    font-size: 0.95em;
+}

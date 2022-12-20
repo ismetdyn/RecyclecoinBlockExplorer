@@ -1,0 +1,51 @@
+﻿syntax = "proto3";
+option csharp_namespace = "RecycleCoin.Grpc";
+import "google/protobuf/empty.proto";
+
+service BlokServis {
+	rpc Ekle(BlokIstek) returns (BlokDurum);
+	rpc TabanYukseklikIleListeGetir(BlokIstek) returns (BlokDurum);
+	rpc SonNadetBlokGetir(BlokIstek) returns (BlokDurum);
+	rpc YukseklikIleTekilGetir(BlokIstek) returns (BlokDurum);
+	rpc KarmaIleTekilGetir(BlokIstek) returns (BlokDurum);
+	rpc BasGetir(google.protobuf.Empty) returns (BlokDurum);
+	rpc SonGetir(google.protobuf.Empty) returns (BlokDurum);
+	rpc DogrulayiciIleListeGetir(BlokIstek) returns (BlokDurum);
+}
+
+
+message BlokDurum{
+	bool durum = 1;
+	string mesaj = 2;
+	Blok blok = 3;
+	repeated Blok bloklar = 4;
+}
+
+message BlokIstek{
+	Blok blok = 1;
+	string karma = 2;
+	int64 yukseklik = 3;
+	int64 taban_yukseklik = 4;
+	int32 adet = 5;
+	string dogrulayici = 6;
+}
+
+message Blok{
+	int32 versiyon = 1;
+	int64 yukseklik = 2;
+	int64 zaman_damgasi = 3;
+	string onceki_karma = 4;
+	string karma = 5;
+	string islemler = 6;
+	string dogrulayici = 7;
+	double dogrulayici_bakiye = 8;
+	string merkle_koku = 9;
+	int32 islem_adedi = 10;
+	double toplam_tutar = 11;
+	double toplam_odul = 12;
+	int32 zorluk = 13;
+	int32 nonce = 14;
+	int32 boyut = 15;
+	int32 insa_suresi = 16;
+	string imza = 17;
+}

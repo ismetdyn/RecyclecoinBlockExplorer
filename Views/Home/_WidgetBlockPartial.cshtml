@@ -1,0 +1,67 @@
+﻿@using RecycleCoin.Grpc;
+@using RecycleCoinBlockExplorer.Utility;
+<div class="card">
+    <div class="card-header">
+        <h6 class="subTitle">Son Bloklar</h6>
+    </div>
+    <div class="card-body">
+        @{
+            var sunucuDurum = ViewBag.SunucuDurum;
+            var bloklar = ViewBag.Bloklar;
+        }
+        @if (true)
+        {
+            @if(bloklar != null && bloklar.Count > 0)
+            {
+                @foreach (Blok blok in bloklar)
+                {
+                    <div class="row divRow">
+                        <div class="col-sm-1 align-self-center">
+                            <div class="bk"><i class="bi bi-receipt"></i></div>
+                        </div>
+
+                        <div class="col-sm-3 d-flex flex-column">
+                            <a href="/blocks/height=@blok.Yukseklik"><span class="heightBlock">@blok.Yukseklik</span></a>
+                            <span class="dateTx">@Converter.ToDateTime(@blok.ZamanDamgasi)</span>
+                        </div>
+                        <div class="col-sm-4 d-flex flex-column">
+                            <span class="addrsLabel">By
+                                <span class="validator">
+                                    <a href="accounts/address=@blok.Dogrulayici">@blok.Dogrulayici.Substring(0,10) ...</a>
+                                </span>
+                            </span>
+
+                            <span>
+                                <span class="lblTx">Blokta</span>
+                                <a class="numTnx" href="/transactions/height=@blok.Yukseklik">@blok.IslemAdedi işlem var</a>
+
+                            </span>
+                        </div>
+
+                        <div class="col-sm-4 align-self-center">
+                            <div class="align-self-end amount">
+                                @blok.ToplamTutar.ToString("C6")
+                                <span style="font-size:0.8em" class="text-muted">RC</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="text-center"><p>Hiçbir blok alınamadı!</p></div>
+            }
+        }
+        else
+        {
+            <div class="text-center"><p>Sunucuyla iletişim kurulamıyor!</p></div>
+        }
+        
+
+    </div>
+
+    <div class="text-center">
+        <a asp-area="" asp-controller="Blocks" asp-action="Index"><span class="viewall">Tüm blokları göster</span></a>
+    </div>
+    <br />
+</div>

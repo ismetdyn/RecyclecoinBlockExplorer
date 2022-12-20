@@ -1,0 +1,121 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RecycleCoinBlockExplorer
+build_property.RootNamespace = RecycleCoinBlockExplorer
+build_property.ProjectDir = C:\Users\ismet\Desktop\RecycleCoinBlockExplorer\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ismet\Desktop\RecycleCoinBlockExplorer
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Blocks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvY2tzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Giris/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Payment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/PendingTransactions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuZGluZ1RyYW5zYWN0aW9uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Search/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/Components/AccountsComponent/Account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWNjb3VudHNDb21wb25lbnRcQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Transactions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-kq4h4abydg
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-vwekut7dzc
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Home/_CardAccountPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ2FyZEFjY291bnRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-m86q52ybh7
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Home/_CardBlockPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ2FyZEJsb2NrUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-ui3637u6kq
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Home/_CardTransactionPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ2FyZFRyYW5zYWN0aW9uUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-5tavib6l44
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Home/_CardTransactionPoolPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ2FyZFRyYW5zYWN0aW9uUG9vbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-018g6rcgfi
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Home/_WidgetBlockPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfV2lkZ2V0QmxvY2tQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-ytp4s81x3o
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Home/_WidgetTransactionPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfV2lkZ2V0VHJhbnNhY3Rpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-inienl51wj
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Home/_WidgetTransactionPoolPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfV2lkZ2V0VHJhbnNhY3Rpb25Qb29sUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-ba8z67lcf7
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/Components/AccountsComponent/AccountsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWNjb3VudHNDb21wb25lbnRcQWNjb3VudHNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-cwqoccgjby
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/Components/BlocksComponent/Block.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvY2tzQ29tcG9uZW50XEJsb2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-shg9vz5jp3
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/Components/BlocksComponent/BlocksList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvY2tzQ29tcG9uZW50XEJsb2Nrc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-c9e3ll6fub
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/Components/TransactionsComponent/Transaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVHJhbnNhY3Rpb25zQ29tcG9uZW50XFRyYW5zYWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-njegzjgrir
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/Components/TransactionsComponent/TransactionsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVHJhbnNhY3Rpb25zQ29tcG9uZW50XFRyYW5zYWN0aW9uc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-tto9fhvr08
+
+[C:/Users/ismet/Desktop/RecycleCoinBlockExplorer/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-n804nrnd72

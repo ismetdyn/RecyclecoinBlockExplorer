@@ -1,0 +1,3 @@
+obj\Debug\net6.0\Grpc\protos/Blok.cs \
+obj\Debug\net6.0\Grpc\protos/BlokGrpc.cs: C:/Users/ismet/.nuget/packages/grpc.tools/2.51.0/build/native/include/google/protobuf/empty.proto\
+ Grpc/protos/blok.proto

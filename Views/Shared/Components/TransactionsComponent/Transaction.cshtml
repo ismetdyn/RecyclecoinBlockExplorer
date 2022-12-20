@@ -1,0 +1,109 @@
+﻿@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers;
+@using RecycleCoin.Grpc;
+@using RecycleCoinBlockExplorer.Utility;
+@model Veri;
+@{
+	ViewData["Title"] = "İşlem";
+	var islem = Model.Islem;
+}
+<div class="pagetitle">
+	@if (islem != null)
+	{
+		<h5>
+			İşlem Karması : <span class="text-wrap title">@islem.Karma</span>
+		</h5>
+
+	}
+	<nav>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="/">AnaSayfa</a>
+			</li>
+
+			<li class="breadcrumb-item">
+				<a href="/transactions">İşlemler</a>
+			</li>
+		</ol>
+	</nav>
+</div>
+
+<div class="card">
+	<div class="card-title" />
+	<div class="card-body">
+		@if (Program.SunucuDurum())
+		{
+			if (islem != null)
+			{
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="Benzersiz 64 karakter uzunluğundaki İşlem Karması">
+						İşlem Karması
+					</div>
+					<div class="col-sm-8 value">@islem.Karma</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="İşlemin kaydedildiği bloğun yüksekliği veya numarası.">
+						Blok Yukseklik
+					</div>
+					<div class="col-sm-8 value">
+						<a class="valueWithLink" href="/blocks/height=@islem.Yukseklik">@islem.Yukseklik</a>
+					</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="İşlemin Durumu.">
+						Durum
+					</div>
+					<div class="col-sm-8 success"><i class="bi bi-check-circle-fill"></i> Başarılı</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="İşlemin bloğa eklendiği tam tarih ve saat.">
+						Zaman Damgası
+					</div>
+					<div class="col-sm-8 value"><i class="bi bi-clock"></i> @Converter.ToDateTime(islem.ZamanDamgasi)</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="Gönderen Adres.">
+						Kimden
+					</div>
+					<div class="col-sm-8 value">
+						<a class="valueWithLink" href="/accounts/address=@islem.Gonderen">@islem.Gonderen</a>
+					</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="Alıcı Adres.">
+						Kime
+					</div>
+					<div class="col-sm-8 value">
+						<a class="valueWithLink" text=@islem.Alici href="/accounts/address=@islem.Alici">@islem.Alici</a>
+					</div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4">
+						Aktarılan Tutar
+					</div>
+					<div class="col-sm-8 value">@islem.Tutar.ToString("C6") RC </div>
+				</div>
+
+				<div class="row rowDiv">
+					<div class="col-sm-4" data-toggle="tooltip" title="Ağişletim ücreti">
+						İşlem Ücreti
+					</div>
+					<div class="col-sm-8 value">@islem.Ucret.ToString("C6") RC </div>
+				</div>
+			}
+			else
+			{
+				<div class="text-center"><p>işlem bulunamadı ya da daha yaratılmadı! </p></div>
+			}
+		}
+		else
+		{
+			<div class="text-center"><p> Sunucuya erişilemiyor! </p></div>
+		}
+	</div>
+</div>

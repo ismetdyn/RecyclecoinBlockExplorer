@@ -1,0 +1,89 @@
+.validatorLabel[b-c9e3ll6fub] {
+    font-size: 0.75em;
+}
+
+.validator[b-c9e3ll6fub] {
+    font-size: 0.9em;
+}
+
+.numTnx[b-c9e3ll6fub] {
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.numTxInTable[b-c9e3ll6fub] {
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+.lblTx[b-c9e3ll6fub] {
+    font-size: 0.8em;
+}
+
+
+.dateTx[b-c9e3ll6fub] {
+    font-size: 0.7em;
+    white-space: nowrap;
+}
+
+
+.heightBlock[b-c9e3ll6fub] {
+    font-size: 0.85em;
+}
+
+.bk[b-c9e3ll6fub] {
+    text-align: left;
+    width: 30px;
+    height: 30px;
+}
+
+.amount[b-c9e3ll6fub] {
+    padding: 5px;
+    font-size: 0.75em;
+    font-weight: bold;
+    width: 100%;
+    text-align: end;
+    background-color: #eee;
+}
+
+.subTitle[b-c9e3ll6fub] {
+    color: #454545;
+}
+
+
+.tableTitle[b-c9e3ll6fub] {
+    margin-bottom: 15px;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+.divRow[b-c9e3ll6fub] {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.viewall[b-c9e3ll6fub] {
+    font-size: 0.8em;
+}
+
+.addrsInTable[b-c9e3ll6fub] {
+    font-size: 0.8em;
+}
+
+.amountInTable[b-c9e3ll6fub] {
+    padding: 5px;
+    font-size: 0.8em;
+    text-align: end;
+    white-space: nowrap;
+}
+
+.dateInTable[b-c9e3ll6fub] {
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.tableHeader[b-c9e3ll6fub] {
+    font-size: 0.8em;
+    white-space: nowrap;
+}

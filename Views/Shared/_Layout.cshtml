@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - BlockExplorer</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/icons/bootstrap-icons.css" />
+	<link rel="stylesheet" href="~/RecycleCoinBlockExplorer.styles.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/globals.css" asp-append-version="true" />
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
+			<div class="container-fluid">
+				@*<a class="logo d-flex align-items-center">
+				<img src="~/favicon.png" alt="RecycleCoin Block Explorer" width="188" height="42" />
+				</a>*@
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RC BlockExplorer</a>
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						@if (Program.SunucuDurum())
+						{
+							<span class="text-success small text-align-right">
+								<strong>&nbsp;&nbsp;&nbsp;Server Durumu&nbsp;&nbsp;</strong>
+							</span>
+						}
+						else
+						{
+							<span class="text-danger small text-align-right">
+								<strong>&nbsp;&nbsp;&nbsp;Server Durumu&nbsp;&nbsp;</strong>
+							</span>
+						}
+					</li>
+				</ul>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto flex-grow-1 mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link text-dark active" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Payment" asp-action="Index">Odeme Al</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Blockchain
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li class="nav-item">
+									<a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Blocks" asp-action="Index">Bloklar</a>
+								</li>
+								<li><hr class="dropdown-divider" /></li>
+								<li class="nav-item">
+									<a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Transactions" asp-action="Index">İşlemler</a>
+								</li>
+								<li class="nav-item">
+									<a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="PendingTransactions" asp-action="Index">Bekleyen İşlemler</a>
+								</li>
+								<li><hr class="dropdown-divider" /></li>
+								<li class="nav-item">
+									<a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Accounts" asp-action="Index">Hesaplar</a>
+								</li>
+								<li><hr class="dropdown-divider" /></li>
+								<li class="nav-item">
+									<a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Giris" asp-action="Index"><span>Giris(Admin)</span></a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<form class="d-flex align-items-center" asp-controller="Search" asp-action="Search" method="post">
+						<input style="margin-left:-24px; width:294px" class="form-control me-2" type="text" name="aranacakMetin" placeholder="adres/İşlem karma/Blok ile Arama Yap" title="Search" />
+						<button class="btn btn-outline-success" title="Search"><i class="bi bi-search"></i></button>
+					</form>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container">
+		<main id="main" class="main pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="border-top footer text-muted">
+		<div class="container copyright">
+			<span>
+				&copy; 2022 - RecycleCoinBlockExplorer - Created by NoManuelItsEmanuel
+			</span>
+		</div>
+	</footer>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

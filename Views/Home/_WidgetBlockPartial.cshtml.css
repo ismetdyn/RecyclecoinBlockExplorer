@@ -1,0 +1,53 @@
+﻿.dateTx {
+    font-size: 0.70em;
+    white-space: nowrap;
+}
+
+.bk {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.amount {
+    padding: 5px;
+    font-size: 0.70em;
+    min-width: 10%;
+    text-align: end;
+    background-color: #eee;
+    white-space: nowrap;
+}
+
+.viewall {
+    font-size: 0.8em;
+}
+
+.heightBlock {
+    font-size: 0.9em;
+}
+
+.addrsLabel {
+    font-size: 0.7em;
+    color: gray;
+}
+
+.numTnx {
+    font-size: 0.7em;
+}
+
+.lblTx {
+    font-size: 0.7em;
+}
+
+.address {
+    font-size: 0.9em;
+}
+
+.subTitle {
+    color: #454545;
+}
+
+.divRow {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #dddddd;
+}

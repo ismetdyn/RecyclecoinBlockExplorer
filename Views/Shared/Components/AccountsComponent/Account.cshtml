@@ -1,0 +1,60 @@
+﻿@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers;
+@using RecycleCoin.Grpc;
+@model Veri;
+@{
+	ViewData["Title"] = "Hesap";
+	var hesap = Model.Hesap;
+	double onaylanmamisBakiye = Model.OnaylanmamisBakiye;
+	var islemler = Model.Islemler;
+	var bekleyenIslemler = Model.BekleyenIslemler;
+}
+
+<div class="pagetitle">
+	@if (Program.SunucuDurum() && hesap != null)
+	{
+		<h5>Adres <span class="text-break title">@hesap.Adres</h5>
+	}
+</div>
+
+
+<div class="card">
+	<div class="card-header">
+		Genel Bakış
+	</div>
+	<div class="card-body">
+		@if (Program.SunucuDurum())
+		{
+			@if (hesap != null)
+			{
+				<div class="section dashboard col-12">
+					<div class="row rowDiv">
+						<div class="col-sm-2">Bakiye </div>
+						<div class="col-sm-9 value"><strong>@hesap.Bakiye.ToString("C6")</strong> RC</div>
+					</div>
+					<div class="row rowDiv">
+						<div class="col-sm-2">Onaylanmamış Bakiye </div>
+						<div class="col-sm-9 value"><strong>@onaylanmamisBakiye.ToString("C6")</strong> RC</div>
+					</div>
+				</div>
+
+				<br />
+				<div class="col-lg-6">
+					@(await Component.InvokeAsync("TransactionsComponent", Model))
+				</div>
+					Model.IsPool = true;
+				<div class="col-lg-6">
+					@(await Component.InvokeAsync("TransactionsComponent", Model))
+				</div>
+			}
+			else
+			{
+				<div class="text-center"><p>Hesap Bilgisi Alınamadı! </p></div>
+			}
+		}
+		else
+		{
+			<div class="text-center"><p>Sunucuya erişilemiyor! </p></div>
+		}
+	</div>
+</div>
+

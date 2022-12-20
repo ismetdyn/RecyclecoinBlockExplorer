@@ -1,0 +1,22 @@
+.rowDiv[b-njegzjgrir] {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.title[b-njegzjgrir] {
+    margin-top: 20px;
+}
+
+.value[b-njegzjgrir] {
+    font-size: 0.95em;
+}
+
+
+.success[b-njegzjgrir] {
+    color: green;
+    font-size: 0.95em;
+}
+
+.valueWithLink[b-njegzjgrir] {
+    font-size: 0.95em;
+}

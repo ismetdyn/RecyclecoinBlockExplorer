@@ -1,0 +1,48 @@
+﻿syntax = "proto3";
+option csharp_namespace = "RecycleCoin.Grpc";
+import "google/protobuf/empty.proto";
+
+service IslemServis  {
+	rpc Al(IslemIstek) returns (IslemDurum);
+	rpc ExplorerdanAl(IslemIstek) returns(IslemDurum);
+	rpc Aktar(IslemIstek) returns (IslemDurum);
+	rpc KarmaIleTekilGetir(IslemIstek) returns (IslemDurum);
+	rpc AdresIleListeGetir(IslemIstek) returns (IslemDurum);
+	rpc HavuzuGetir(google.protobuf.Empty) returns (IslemDurum);
+	rpc GecmisTumIslemleriGetir (google.protobuf.Empty) returns (IslemDurum);
+	rpc HavuzdanKarmaIleTekilGetir(IslemIstek) returns (IslemDurum);
+	rpc HavuzdanAdresIleListeGetir(IslemIstek) returns (IslemDurum);
+	rpc YukseklikIleBlokGetir(IslemIstek) returns (IslemDurum);
+	rpc YukseklikIleIslemListeGetir(IslemIstek) returns (IslemDurum);
+	rpc SonNadetIslemGetir(IslemIstek) returns (IslemDurum);
+	rpc HavuzdanSonNadetIslemGetir(IslemIstek) returns (IslemDurum);
+
+}
+
+message IslemIstek {
+	Islem islem = 1;	
+	int64 yukseklik = 2;
+	string adres = 3;
+	string karma = 4;
+	int32 adet = 5;
+}
+
+message IslemDurum{
+	bool durum = 1;
+	string mesaj = 2;
+	Islem islem = 3;
+	repeated Islem islemler = 4;
+}
+
+message Islem{
+	string karma = 1;
+	int64 zaman_damgasi = 2;
+	string gonderen = 3;
+	string alici = 4;
+	double tutar = 5;
+	double ucret = 6;
+	int64 yukseklik = 7;
+	string imza = 8;
+	string genel_anahtar = 9;
+	string islem_tipi = 10;
+}

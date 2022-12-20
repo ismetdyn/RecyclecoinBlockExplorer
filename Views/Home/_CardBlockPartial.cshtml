@@ -1,0 +1,27 @@
+﻿<div class="col-xxl-3 col-md-3">
+    <div class="card info-card customers-card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a class="title" href="/blocks">Bloklar</a>&nbsp;&nbsp;
+                <i class="bi bi-question-circle"></i>
+            </h5>
+
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="text-secondary bi bi-receipt"></i>
+                </div>
+                <div class="ps-3">
+                    <div style="width:100px"></div>
+                    @{
+                        var data = (long)ViewBag.SonBlokYuksekligi;
+                    }
+                    <h6>
+                        @data.ToString() &nbsp;<span class="textSufix">Bk</span>
+                    </h6>
+                    <span class="infoSmall">Dakikada 1 blok yaratılır.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
